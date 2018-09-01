@@ -1,0 +1,13 @@
+a:hover {
+    text-decoration: none;
+}
+.titleBar {
+    font-family: Courier New, Courier, monospace;
+    text-shadow: 5px 5px 5px grey;
+}
+
+.btn {
+    border-width: 5px;
+    border-color: black;
+    border-radius: 25%;
+}

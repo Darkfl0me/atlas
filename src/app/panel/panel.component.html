@@ -1,0 +1,31 @@
+<div class="d-flex justify-content-end">
+  <div ngbDropdown class="m-2 d-inline-block">
+    <button class="btn btn-outline-dark" id="dropdownBasic1" ngbDropdownToggle>Region</button>
+    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+      <a class="dropdown-item" 
+        [routerLink]="['/countries', 'region', 'asia']">
+        Asia
+      </a>
+      <a class="dropdown-item" 
+        [routerLink]="['/countries', 'region', 'africa']">
+        Africa
+      </a>
+      <a class="dropdown-item" 
+        [routerLink]="['/countries', 'region', 'americas']">
+        Americas
+      </a>
+      <a class="dropdown-item" 
+        [routerLink]="['/countries', 'region', 'europe']">
+        Eurpoe
+      </a>
+      <a class="dropdown-item" 
+        [routerLink]="['/countries', 'region', 'oceania']">
+        Oceania
+      </a>
+    </div>
+  </div>
+  <button class="m-2 btn btn-outline-dark" 
+    (click)="goBack()">
+    Go Back
+  </button>
+</div>

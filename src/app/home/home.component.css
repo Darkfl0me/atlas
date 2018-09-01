@@ -1,0 +1,14 @@
+a:hover {
+    text-decoration: none;
+}
+
+.subtitle-one {
+    font-family: Comic Sans MS, cursive, sans-serif;
+}
+
+.card:hover {
+    border-color: black;
+    border-width: thick;
+    box-shadow: 10px 10px 5px grey;
+}
+

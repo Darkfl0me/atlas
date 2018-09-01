@@ -1,0 +1,6 @@
+<app-panel></app-panel>
+<div *ngIf="(countries | async) as countries">
+  <app-country-list 
+    [countryList]="countries"
+    (pickCountry)="onSelected($event)"></app-country-list>
+</div>

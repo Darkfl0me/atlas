@@ -1,0 +1,13 @@
+a:hover {
+    text-decoration: none;
+}
+
+.card {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+.card:hover {
+    border-color: black;
+    border-width: thick;
+    box-shadow: 10px 10px 5px grey;
+}

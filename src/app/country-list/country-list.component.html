@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col-12 col-sm-6 col-md-4 my-2" *ngFor="let country of countries">
+    <div class="card">
+      <img class="card-img-top" [src]="country.flag" alt="flag">
+      <div class="card-body">
+        <h3 class="card-title text-center">{{ country.name }}</h3>
+        <h5 class="text-center">Capital: {{ country.capital }}</h5>
+        <h5 class="text-center">
+          Currency: 
+          <a *ngFor="let currency of country.currencies; let last = last" 
+            [routerLink]="['/countries', 'currency', currency.code]">
+            {{ currency.name }}<!--
+            --><span *ngIf="!last">,&nbsp;</span>
+          </a>
+        </h5>
+        <h5 class="text-center">
+          Language:
+          <a *ngFor="let language of country.languages; let last = last" 
+            [routerLink]="['/countries', 'lang', language.iso639_1]">
+            {{ language.name }}<!--
+            --><span *ngIf="!last">,&nbsp;</span>
+          </a>
+        </h5>
+        <div class="d-flex justify-content-center">
+          <button class="btn btn-outline-dark" (click)="showDetails(country.name)">More Info</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
