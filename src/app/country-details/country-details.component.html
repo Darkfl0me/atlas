@@ -1,64 +1,68 @@
 <app-panel></app-panel>
 <div class="jumbotron" *ngIf="(countryInfo | async) as country">
-  <div class="d-flex flex-column flex-md-row justify-content-around">
-    <img class="img-fluid" [src]="country[0]['flag']" alt="" width="250" height="250">
-    <div class="d-flex flex-column justify-content-center">
+  <div class="row">
+    <div class="col-12 col-md-6">
+        <img class="flag" [src]="country[0]['flag']" alt="">
+    </div>
+    <div class="col-12 col-md-6 d-flex flex-column justify-content-center">
       <h1 class="text-center">{{ country[0]['name'] }}</h1>
       <h3 class="text-center">Country in the {{ country[0]['subregion'] }}</h3>     
     </div>
   </div>
   <hr class="my-4">
-  <table class="table">
-    <tbody>
-      <tr>
-        <td>Native Name:</td>
-        <td>{{ country[0]['nativeName'] }}</td>
-      </tr>
-      <tr>
-        <td>Capital:</td>
-        <td>{{ country[0]['capital'] }}</td>
-      </tr>
-      <tr>
-        <td>Currency:</td>
-        <td class="d-flex">
-          <a *ngFor="let currency of country[0]['currencies']; let last = last"
-              [routerLink]="['/countries', 'currency', currency.code]">
-            {{ currency.name }}<!--
-            --><span *ngIf="!last">,&nbsp;</span>
-          </a>
-        </td>
-      </tr>
-      <tr>
-        <td>Languages:</td>
-        <td class="d-flex flex-direction-row">
-          <a *ngFor="let language of country[0]['languages']; let last = last" 
-            [routerLink]="['/countries', 'lang', language.iso639_1]">
-             {{ language.name }}<!--
-            --><span *ngIf="!last">,&nbsp;</span>
-          </a>
-        </td>
-      </tr>
-      <tr>
-        <td>Timezone:</td>
-        <td class="d-flex flex-column flex-xl-row">
-          <p *ngFor="let timezone of country[0]['timezones']; let last = last">
-            {{ timezone }}<!--
-            --><span *ngIf="!last">,&nbsp;</span>
-          </p>
-        </td>
-      </tr>
-      <tr>
-        <td>Area:</td>
-        <td>{{ country[0]['area'] }}&nbsp;square km</td>
-      </tr>
-      <tr>
-        <td>Population:</td>
-        <td>{{ country[0]['population'] }}</td>
-      </tr>
-      <tr>
-        <td>Numeric Code:</td>
-        <td>{{ country[0]['numericCode'] }}</td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="table-responsive">
+    <table class="table">
+      <tbody>
+        <tr>
+          <td>Native Name:</td>
+          <td>{{ country[0]['nativeName'] }}</td>
+        </tr>
+        <tr>
+          <td>Capital:</td>
+          <td>{{ country[0]['capital'] }}</td>
+        </tr>
+        <tr>
+          <td>Currency:</td>
+          <td class="d-flex">
+            <a *ngFor="let currency of country[0]['currencies']; let last = last"
+                [routerLink]="['/countries', 'currency', currency.code]">
+              {{ currency.name }}<!--
+              --><span *ngIf="!last">,&nbsp;</span>
+            </a>
+          </td>
+        </tr>
+        <tr class="">
+          <td class="">Languages:</td>
+          <td class="d-flex flex-direction-row">
+            <a *ngFor="let language of country[0]['languages']; let last = last" 
+              [routerLink]="['/countries', 'lang', language.iso639_1]">
+              {{ language.name }}<!--
+              --><span *ngIf="!last">,&nbsp;</span>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td>Timezone:</td>
+          <td class="d-flex flex-column flex-xl-row">
+            <p *ngFor="let timezone of country[0]['timezones']; let last = last">
+              {{ timezone }}<!--
+              --><span *ngIf="!last">,&nbsp;</span>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>Area:</td>
+          <td>{{ country[0]['area'] }}&nbsp;square km</td>
+        </tr>
+        <tr>
+          <td>Population:</td>
+          <td>{{ country[0]['population'] }}</td>
+        </tr>
+        <tr>
+          <td>Numeric Code:</td>
+          <td>{{ country[0]['numericCode'] }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
